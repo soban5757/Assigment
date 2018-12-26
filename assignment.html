@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+        .container{
+            margin-top: 100px;
+        }
+    </style>
+
+    <title>Assignment</title>
+  </head>
+  <body>
+
+    <form class="form-horizontal">
+        <div class="container">
+            <div class="row">
+                <div class="form-group form-group-sm col-sm-12">
+                    <div class="row">
+                        <label for="number1" class="col-sm-3 col-form-label">First Number</label>
+                        <div class="col-sm-9">
+                            <input type="number" value="0" min="0" class="form-control" id="number1" name="first_number">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group form-group-sm col-sm-12">
+                    <div class="row">
+                        <label for="number2" class="col-sm-3 col-form-label">Second Number</label>
+                        <div class="col-sm-9">
+                            <input type="number" value="0" min="0" class="form-control" id="number2" name="secnd_number">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8 col-md-10 ">
+                    <h3 id="result">Result : 0</h3>
+                </div>
+                <div class="col-sm-2 col-md-1 ">
+                    <button onclick="add()" type="button" class="float-right btn btn-primary">Add</button>
+                </div>
+                <div class="col-sm-2 col-md-1">
+                    <button onclick="sub()" type="button" class="float-right btn btn-primary">Sub</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script>
+
+        var num1   = 0;
+        var num2   = 0;
+        var result = 0;
+    
+        function add(){
+
+            num1 = document.getElementById('number1').value;
+            num2 = document.getElementById('number2').value;
+        
+            result = +num1 + +num2;
+
+            document.getElementById('result').innerHTML = "Result : "+result;
+
+        }
+
+        function sub(){
+
+            num1 = document.getElementById('number1').value;
+            num2 = document.getElementById('number2').value;
+
+            if(validateNumber(num1) || validateNumber()){
+                alert('Only positive intgers are allowed');
+            }
+        
+            result = +num1 - +num2;
+
+            document.getElementById('result').innerHTML = "Result : "+result;
+
+        }
+
+        function validateNumber(number){
+
+            if(typeof number == 'number' && number > 0){
+                return true;
+            }
+
+            return false;
+        }
+
+    </script>
+
+  </body>
+</html>
